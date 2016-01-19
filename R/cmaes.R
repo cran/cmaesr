@@ -1,8 +1,8 @@
-#' @title Covariance-Matrix-Adaption
+#' @title Covariance-Matrix-Adaptation
 #'
 #' @description
 #' Performs non-linear, non-convex optimization by means of the Covariance
-#' Matrix Adaption - Evolution Strategy (CMA-ES).
+#' Matrix Adaptation - Evolution Strategy (CMA-ES).
 #'
 #' @details
 #' This is a pure R implementation of the popular CMA-ES optimizer for continuous
@@ -205,10 +205,12 @@ cmaes = function(
     if (any(weights < 0)) {
       stopf("All weights need to be positive, but there are %i negative ones.", sum(which(weights < 0)))
     }
-    weights = weights / sum(weights)
-    if (!(sum(weights) - 1.0) < .Machine$double.eps) {
-      stopf("All 'weights' need to sum up to 1, but actually the sum is %f", sum(weights))
+    if (length(weights) != mu) {
+      stopf("You need to pass %i 'weights', but you passed %i.", mu, length(weights))
     }
+
+    # normalize weights
+    weights = weights / sum(weights)
 
     # variance-effectiveness / variance effective selection mass of sum w_i x_i
     mu.eff = sum(weights)^2 / sum(weights^2) # chosen such that mu.eff ~ lambda/4
@@ -217,7 +219,7 @@ cmaes = function(
     cs = (mu.eff + 2) / (n + mu.eff + 5)
     ds = 1 + 2 * max(0, sqrt((mu.eff - 1) / (n + 1)) - 1) + cs # damping factor
 
-    # covariance matrix adaption parameters
+    # covariance matrix Adaptation parameters
     cc = (4 + mu.eff / n) / (n + 4 + 2 * mu.eff / n)
     c1 = 2 / ((n + 1.3)^2 + mu.eff)
     alpha.mu = 2L
@@ -297,7 +299,7 @@ cmaes = function(
         population.trace[[iter]] = x.best
       }
 
-  		# Update evolution path with cumulative step-size adaption (CSA) / path length control
+  		# Update evolution path with cumulative step-size Adaptation (CSA) / path length control
       # For an explanation of the last factor see appendix A in https://www.lri.fr/~hansen/cmatutorial.pdf
       ps = (1 - cs) * ps + sqrt(cs * (2 - cs) * mu.eff) * (Cinvsqrt %*% y.w)
   		h.sigma = as.integer(norm2(ps) / sqrt(1 - (1 - cs)^(2 * (iter + 1))) < chi.n * (1.4 + 2 / (n + 1)))
