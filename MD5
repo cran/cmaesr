@@ -1,8 +1,8 @@
-15694d562599150b9665a39a48900bda *DESCRIPTION
+7c29a98b6cf12969dbe0c6bdd523566b *DESCRIPTION
 75ba4bad6039ffb4d05cae82ae8be5dc *LICENSE
 7cdca95ef199f05e194aed46287645b7 *NAMESPACE
 cbe4da3b90f92fef3702758764be167a *NEWS
-9db75cc9b7ad5c50cdf332700e9509b6 *R/cmaes.R
+4f2386afec1fcfa1c8ef77a0569e9bef *R/cmaes.R
 e1d683121b5103b5e8e5280aabd419ca *R/helpers.R
 198be9a9f3a1965039f9b2649805055e *R/makeMonitor.R
 c5dfcba283eccc7085f41c74c53702ff *R/makeStoppingCondition.R
@@ -25,6 +25,6 @@ f7f55a722fb9c4167ccc5f90ccf77a5f *man/stopOnOptValue.Rd
 5e7bbf9c051c405b45836573aab1e29e *man/stopOnTimeBudget.Rd
 c2c64e518126e3e67c435c64ddeb8049 *man/stopOnTolX.Rd
 b91b32f3de49aaa7a6f81ce7285186f9 *tests/testthat/helper_zzz.R
-8598d224e020327e51495bd9c8de0e85 *tests/testthat/test_cmaes.R
+2495889fde731dcbb0d4100bc094b068 *tests/testthat/test_cmaes.R
 02d825a95c2c99d7e400cc18b4aac4ba *tests/testthat/test_monitoring.R
 d784fbfc82166037f9608297a2aeb3a5 *tests/testthat/test_stopping_conditions.R
