@@ -3,8 +3,8 @@ Type: Package
 Title: Covariance Matrix Adaptation Evolution Strategy
 Description: Pure R implementation of the Covariance Matrix Adaptation -
     Evolution Strategy (CMA-ES) with optional restarts (IPOP-CMA-ES).
-Version: 1.0.2
-Date: 2016-08-03
+Version: 1.0.3
+Date: 2016-12-04
 Authors@R: c(person("Jakob", "Bossek", email = "j.bossek@gmail.com", role =
     c("aut", "cre")))
 Maintainer: Jakob Bossek <j.bossek@gmail.com>
@@ -18,7 +18,7 @@ Suggests: testthat
 ByteCompile: yes
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2016-08-04 22:43:42 UTC; jboss
+Packaged: 2016-12-04 10:20:41 UTC; jboss
 Author: Jakob Bossek [aut, cre]
 Repository: CRAN
-Date/Publication: 2016-08-05 00:55:34
+Date/Publication: 2016-12-04 17:21:54
